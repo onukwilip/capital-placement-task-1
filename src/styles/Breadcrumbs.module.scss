@@ -1,0 +1,47 @@
+@import "./config.scss";
+
+.breadcrumbs {
+    @include flex(center, start, 0, row);
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(black, 0.2);
+    .breadcrumb {
+        width: 250px;
+        height: 100px;
+        padding: 1rem;
+        position: relative;
+        @include flex(center, center, auto);
+        // transition: 200ms;
+        cursor: pointer;
+        &:nth-of-type(n - 2) {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                height: 50%;
+                width: 1px;
+                background-color: rgba(black, 0.2);
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+            }
+        }
+        &.active {
+            background-color: $pry-d-green;
+            color: white;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background-color: $pry-d-green;
+                right: -0.7rem;
+                transform: translateY(-50%) rotateZ(45deg);
+            }
+        }
+    }
+    @include media(max, 530px) {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,36 @@
+// $pry-colors: (#934a5f, #57648c, #c2b4d6, #e5e5e5);
+// colors
+$pry-d-green: #00635b;
+$pry-l-blue: #d0f7fa;
+$pry-d-red: #a80000;
+$pry-l-white: #f5f5f5;
+
+@mixin grid($col, $row, $gap) {
+    display: grid;
+    grid-template-columns: $col;
+    grid-auto-rows: $row;
+    gap: $gap;
+}
+
+@mixin flex($ai, $jc, $gap, $fld: false) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    gap: $gap;
+
+    @if ($fld != false) {
+        flex-direction: $fld;
+    }
+}
+
+@mixin media($prefix, $size) {
+    @media (#{$prefix}-width: $size) {
+        @content;
+    }
+}
+
+@mixin media-h($prefix, $size) {
+    @media (#{$prefix}-height: $size) {
+        @content;
+    }
+}

@@ -1,0 +1,44 @@
+@import "./config.scss";
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include flex(stretch, start, 0, row);
+  .side_menu_container {
+    flex: 0;
+  }
+  .dashboard_container {
+    background-color: $pry-l-white;
+    flex: 1;
+    padding: 1rem 6rem;
+    overflow-y: auto;
+
+    @include flex(center, start, 1rem, column);
+    & > div {
+      width: 100%;
+    }
+    .action {
+      @include flex(center, end, auto);
+      & > button {
+        @include flex(center, space-between, 0.5rem);
+      }
+      & > span {
+        font-weight: 800;
+        cursor: pointer;
+      }
+    }
+    .breadcrumbs_container {
+      @include flex(center, center, auto);
+    }
+    @include media(max, 800px) {
+      padding: 1rem;
+    }
+  }
+  @include media(max, 530px) {
+    .side_menu_container {
+      display: none;
+    }
+  }
+}

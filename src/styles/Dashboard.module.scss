@@ -1,0 +1,273 @@
+@import "./config.scss";
+
+.dashboard {
+    width: 100%;
+    @include flex(start, start, 2rem, column);
+    & > .actions {
+        @include flex(center, end, auto);
+        width: 600px;
+        @include media(max, 800px) {
+            width: 500px;
+        }
+        @include media(max, 700px) {
+            width: 100%;
+        }
+    }
+}
+.each_dashboard_section {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(black, 0.2);
+    width: 600px;
+    & > .title {
+        padding: 1.5rem;
+        background-color: $pry-l-blue;
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: capitalize;
+        color: $pry-d-green;
+    }
+    & > .content {
+        padding: 1.5rem;
+        background: white;
+    }
+    @include media(max, 800px) {
+        width: 500px;
+    }
+    @include media(max, 700px) {
+        width: 100%;
+    }
+}
+.upload_cover_image {
+    label {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        border: 3px dotted $pry-d-green;
+        display: block;
+        cursor: pointer;
+        @include flex(center, center, 0.5rem, column);
+        span {
+            display: block;
+            &:first-of-type {
+                font-weight: 800;
+            }
+        }
+    }
+    .img_container {
+        position: relative;
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 5px;
+        }
+        i {
+            position: absolute;
+            top: 0.2rem;
+            right: 0.2rem;
+            font-size: 20px;
+            color: $pry-d-red;
+            cursor: pointer;
+            transition: 200ms;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+.personal_info {
+    @include flex(start, start, 0, column);
+    & > div {
+        width: 100%;
+    }
+}
+.each_personal_info {
+    width: 100%;
+    padding: 1rem 0;
+    @include flex(center, space-between, 1rem);
+    .action {
+        @include flex(center, start, 1rem);
+    }
+}
+.add_personal_info_question {
+    padding: 1rem 0;
+    width: 100%;
+    @include flex(start, start, auto);
+    & > .add_question_btn {
+        cursor: pointer;
+        color: $pry-d-green;
+        @include flex(center, center, 0.5rem);
+        i {
+            font-size: 24px;
+        }
+    }
+}
+
+.profile_info {
+    @include flex(start, start, 0, column);
+    & > div {
+        width: 100%;
+    }
+}
+.each_profile_info {
+    width: 100%;
+    padding: 1rem 0;
+    @include flex(center, space-between, 1rem);
+    .action {
+        @include flex(center, start, 1rem);
+    }
+}
+.add_profile_info_question {
+    padding: 1rem 0;
+    width: 100%;
+    @include flex(start, start, auto);
+    & > .add_question_btn {
+        cursor: pointer;
+        color: $pry-d-green;
+        @include flex(center, center, 0.5rem);
+        i {
+            font-size: 24px;
+        }
+    }
+}
+.additional_questions {
+    @include flex(start, start, 0, column);
+    & > div {
+        width: 100%;
+    }
+}
+.add_additional_question {
+    padding: 1rem 0;
+    width: 100%;
+    @include flex(start, start, auto);
+    & > .add_question_btn {
+        cursor: pointer;
+        color: $pry-d-green;
+        @include flex(center, center, 0.5rem);
+        i {
+            font-size: 24px;
+        }
+    }
+}
+.each_question {
+    width: 100%;
+    padding: 1rem 0;
+    .wrapper {
+        position: relative;
+        @include flex(center, start, 1rem);
+        .wrapper_content {
+            .type {
+                color: rgba(black, 0.5);
+            }
+            .question {
+                font-weight: 800;
+            }
+        }
+        & > i {
+            font-size: 18px;
+            color: $pry-d-green;
+            transition: 200ms;
+            &:hover {
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+        }
+    }
+}
+.question_component {
+    .content {
+        @include flex(start, start, 1rem, column);
+        & > * {
+            width: 100%;
+        }
+        .auto_complete {
+            margin-bottom: 0.5rem;
+        }
+        .input {
+            width: 100%;
+        }
+        .actions {
+            @include flex(center, space-between, 1rem);
+            .delete_question {
+                @include flex(center, start, 0.5rem);
+                cursor: pointer;
+                color: $pry-d-red;
+                transition: 200ms;
+                i {
+                    font-size: 20px;
+                    color: $pry-d-red;
+                }
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+.edit_question_component {
+    @include flex(start, start, 1rem, column);
+    & > * {
+        width: 100%;
+    }
+    .auto_complete {
+        margin-bottom: 0.5rem;
+    }
+    .input {
+        width: 100%;
+    }
+    .actions {
+        @include flex(center, space-between, 1rem);
+        .left {
+            @include flex(center, start, 1rem);
+            .delete_question {
+                @include flex(center, start, 0.5rem);
+                cursor: pointer;
+                color: $pry-d-red;
+                transition: 200ms;
+                i {
+                    font-size: 20px;
+                    color: $pry-d-red;
+                }
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+.choice_container {
+    @include flex(start, start, 1rem, column);
+    .option {
+        width: 100%;
+        @include flex(center, start, 0.5rem);
+        i {
+            flex: 0;
+            cursor: pointer;
+            color: $pry-d-green;
+            transition: 200ms;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        .input {
+            flex: 1;
+        }
+    }
+    .input {
+        width: 100%;
+    }
+}
+.video_question {
+    @include flex(start, start, 1rem, column);
+    & > * {
+        width: 100%;
+    }
+    .container {
+        @include flex(center, start, 1rem);
+        .input {
+            flex: 1;
+        }
+    }
+}

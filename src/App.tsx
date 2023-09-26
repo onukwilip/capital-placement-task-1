@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import css from "./styles/App.module.scss";
+import SideMenu from "./components/SideMenu";
+import { Button } from "@mui/material";
+import Breadcrumbs from "./components/Breadcrumbs";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className={css.app}>
+      <div className={css.side_menu_container}>
+        <SideMenu />
+      </div>
+      <div className={css.dashboard_container}>
+        <div className={css.action}>
+          <Button variant="contained" size="large" color="success">
+            <span> Save & continue</span> <i className="fas fa-caret-right" />
+          </Button>
+        </div>
+        <div className={css.breadcrumbs_container}>
+          <Breadcrumbs />
+        </div>
+        <div className={css.action}>
+          <span>Save draft</span>
+        </div>
+        <Dashboard />
+      </div>
+    </main>
   );
 }
 
