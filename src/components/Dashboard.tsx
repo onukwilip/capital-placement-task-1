@@ -1193,28 +1193,51 @@ const Dashboard: FC = () => {
   }
 
   return (
-    <section className={css.dashboard}>
-      <UploadCoverImageSection existingImage={attributes.coverImage} />
-      <PersonalInformationSection
-        personalInformationFields={attributes.personalInformation}
-      />
-      <ProfileInformationSection
-        profileInformationFields={attributes.profile}
-      />
-      <AdditionalQuestionsSection
-        additionalQuestions={attributes.customisedQuestions}
-      />
-      <div className={css.actions}>
-        <Button
-          variant="contained"
-          color="success"
-          onClick={updateDetails}
-          disabled={attributes.metadata.editing}
-        >
-          {attributes.metadata.editing ? "Saving" : "Save details"}
-        </Button>
-      </div>
-    </section>
+    <>
+      <section className={css.dashboard}>
+        <UploadCoverImageSection existingImage={attributes.coverImage} />
+        <PersonalInformationSection
+          personalInformationFields={attributes.personalInformation}
+        />
+        <ProfileInformationSection
+          profileInformationFields={attributes.profile}
+        />
+        <AdditionalQuestionsSection
+          additionalQuestions={attributes.customisedQuestions}
+        />
+        <div className={css.actions}>
+          <Button
+            variant="contained"
+            color="success"
+            onClick={updateDetails}
+            disabled={attributes.metadata.editing}
+          >
+            {attributes.metadata.editing ? "Saving" : "Save details"}
+          </Button>
+        </div>
+      </section>
+      {attributes.metadata.errorFetching && (
+        <>
+          <Snackbar
+            open={attributes.metadata.errorFetching}
+            autoHideDuration={6000}
+            onClose={() =>
+              dispatch(attributeActions.toogleErrorFetching(false))
+            }
+          >
+            <Alert
+              severity="error"
+              onClose={() =>
+                dispatch(attributeActions.toogleErrorFetching(false))
+              }
+            >
+              We encountered an error while fetching the details from the
+              endpoint. The dummy details is being used instead!
+            </Alert>
+          </Snackbar>
+        </>
+      )}
+    </>
   );
 };
 

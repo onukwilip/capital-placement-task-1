@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# CAPITAL PLACEMENT TASK 1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the first task (Task 1) of the interview assessment assigned to me by captial placement for the role of a frontend developer. The project was developed using the following tools:
 
-## Available Scripts
+- React Js
+- Typescript
+- SCSS
+- Material UI
+- Docker
 
-In the project directory, you can run:
+## HOW TO USE
 
-### `npm start`
+- **Run the project directly on your system**:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  > To run this project directly on your system you will need [**Node.Js**](https://nodejs.org/en/download) version **16.15.0** or higher
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  - Run `git clone https://github.com/onukwilip/capital-placement-task-1.git`
+  - Run `npm i -f` (To install all dependencies)
+  - Run `npm run build` (To create the production build)
+  - Run `npm i -g @stoplight/prism-cli` (To install Prism)
+  - Run `npx prism mock ./prism-demo.yaml` (Start the prism server to mock the API endpoints)
+  - Run `npm i -g serve` (Install the library responsible for serving the production build)
+  - Run `npx serve -s build` (Serve the application on http://localhost:3000)
 
-### `npm test`
+- **Run the project using Docker**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  > To run this project as a container you will need [**Docker**](https://www.docker.com/products/docker-desktop/)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - Run `git clone https://github.com/onukwilip/capital-placement-task-1.git`
+  - Run `docker build -t cp-task-1 .`
+  - Run `docker run -p 3000:3000 -rm -it cp-task-1`
+  - Run `docker build -t d-prism . -f .\prism.Dockerfile`
+  - Run `docker run -p 4010:4010 --rm d-prism`
