@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./styles/App.module.scss";
 import SideMenu from "./components/SideMenu";
 import { Button } from "@mui/material";
