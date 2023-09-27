@@ -22,6 +22,8 @@ This is the first task (Task 1) of the interview assessment assigned to me by ca
   - Run `npm i -g serve` (Install the library responsible for serving the production build)
   - Run `npx serve -s build` (Serve the application on http://localhost:3000)
 
+  **N.B: Make sure to fill the following environmental variables with the URL of the Prism mock server when running the project locally: `API_GET_ENDPOINT`, `API_PUT_ENDPOINT`**
+
 - **Run the project using Docker**:
 
   > To run this project as a container you will need [**Docker**](https://www.docker.com/products/docker-desktop/)
